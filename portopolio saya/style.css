@@ -1,0 +1,2101 @@
+/* =========================
+   1. PENGATURAN DASAR
+========================= */
+:root {
+    --hijau-tua: #193d2b;
+    --hijau: #a3d65c;
+    --krem: #f4f0e5;
+    --hitam: #1a1a1a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--krem);
+    color: var(--hitam);
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+section {
+    scroll-margin-top: 85px;
+}
+
+
+/* =========================
+   2. NAVIGASI
+========================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: var(--krem);
+    border-bottom: 1px solid #ccc;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 32px;
+}
+
+.logo span {
+    color: #6b8e3d;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    font-size: 14px;
+    font-weight: 700;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    color: #6b8e3d;
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   3. HERO / HALAMAN UTAMA
+========================= */
+.hero {
+    min-height: 90vh;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background: var(--hijau-tua);
+    color: var(--krem);
+    overflow: hidden;
+}
+
+.hero-text {
+    max-width: 620px;
+    animation: masukKiri 1s ease both;
+}
+
+.small-title,
+.section-label {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.green-text {
+    color: var(--hijau);
+}
+
+.hero h2 {
+    font-size: clamp(18px, 2.5vw, 26px);
+    margin-bottom: 20px;
+}
+
+#changing-text {
+    color: var(--hijau);
+}
+
+.cursor {
+    animation: kedip 0.8s infinite;
+}
+
+.description {
+    max-width: 500px;
+    color: #d9dfd7;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+/* =========================
+   4. TOMBOL
+========================= */
+.button {
+    display: inline-block;
+    padding: 13px 22px;
+    background: var(--hijau);
+    color: var(--hitam);
+    border: 2px solid var(--hijau);
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 800;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 5px 5px 0 #f4f0e5;
+    background: #c2f783;
+}
+
+.button-outline {
+    background: transparent;
+    color: var(--krem);
+    border-color: var(--krem);
+}
+
+.button-outline:hover {
+    background: var(--krem);
+    color: var(--hijau-tua);
+}
+
+
+/* =========================
+   5. ILUSTRASI & FOTO HERO
+========================= */
+.hero-visual {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    animation: masukKanan 1s ease both;
+}
+
+.visual-card {
+    width: 250px;
+    height: 290px;
+    background: var(--krem);
+    color: var(--hitam);
+    border: 3px solid var(--hitam);
+    box-shadow: 10px 10px 0 var(--hijau);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-5deg);
+    transition: transform 0.4s, box-shadow 0.4s;
+    z-index: 2;
+}
+
+/* Pengaturan khusus untuk kartu foto profil */
+.photo-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-visual:hover .visual-card {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 16px 16px 0 var(--hijau);
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle-one {
+    width: 270px;
+    height: 270px;
+    background: var(--hijau);
+    top: 0;
+    right: 0;
+    animation: mengambang 4s ease-in-out infinite;
+}
+
+.circle-two {
+    width: 100px;
+    height: 100px;
+    background: #6b8e3d;
+    bottom: 0;
+    left: 0;
+    animation: mengambang 3s ease-in-out infinite reverse;
+}
+
+.sticker {
+    position: absolute;
+    bottom: 10px;
+    right: -15px;
+    background: var(--hijau);
+    color: var(--hitam);
+    padding: 10px 14px;
+    font-size: 11px;
+    font-weight: 800;
+    transform: rotate(8deg);
+    transition: transform 0.3s;
+    z-index: 3;
+}
+
+.hero-visual:hover .sticker {
+    transform: rotate(-5deg) scale(1.1);
+}
+
+
+/* =========================
+   6. BAGIAN ABOUT
+========================= */
+.section {
+    padding: 100px 8%;
+}
+
+.section-label {
+    color: #6b8e3d;
+}
+
+.about h2,
+.projects h2,
+.contact h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(40px, 6vw, 70px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.about-description {
+    max-width: 700px;
+    color: #555;
+    font-size: 17px;
+}
+
+
+/* =========================
+   7. BAGIAN PROJECT (Menyesuaikan Ukuran Asli Gambar)
+========================= */
+
+.projects {
+    background: #e6e8d7;
+}
+
+.project-container {
+    display: grid;
+    /* Mengubah grid agar menyesuaikan isi secara otomatis */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+    align-items: start; /* Agar kartu sejajar rapi dari atas */
+}
+
+.project-card {
+    padding: 15px;
+    background: var(--krem);
+    border: 2px solid var(--hitam);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) rotate(-1deg);
+    box-shadow: 8px 8px 0 var(--hijau-tua);
+}
+
+.project-image {
+    /* Menghapus tinggi tetap (height: 220px) agar kotak mengikuti ukuran asli gambar */
+    width: 100%;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    border: 2px solid var(--hitam);
+}
+
+/* Pengaturan gambar agar tampil utuh sesuai ukuran aslinya */
+.project-img {
+    width: 100%;
+    height: auto; /* Tinggi otomatis mengikuti rasio asli gambar */
+    object-fit: unset;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.03); /* Efek zoom sedikit saat di-hover */
+}
+
+.project-image span {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    font-size: 12px;
+    font-weight: 800;
+    background: var(--krem);
+    padding: 2px 6px;
+    border: 1px solid var(--hitam);
+    z-index: 2;
+}
+
+.project-card > h3 {
+    margin: 18px 0 5px;
+}
+
+.project-card > p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Penyesuaian untuk tampilan HP (agar tetap rapi 1 kolom ke bawah) */
+@media (max-width: 800px) {
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================
+   8. BAGIAN CONTACT
+========================= */
+.contact {
+    background: var(--hijau);
+}
+
+.contact h2 span {
+    color: var(--hijau-tua);
+}
+
+.contact > p:not(.section-label) {
+    margin-bottom: 20px;
+}
+
+.contact-button {
+    background: var(--hijau-tua);
+    color: white;
+    border-color: var(--hijau-tua);
+}
+
+.contact-button:hover {
+    background: var(--krem);
+    color: var(--hijau-tua);
+    box-shadow: 5px 5px 0 var(--hitam);
+}
+
+
+/* =========================
+   9. FOOTER
+========================= */
+footer {
+    background: var(--hijau-tua);
+    color: var(--krem);
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+}
+
+
+/* =========================
+   10. ANIMASI & RESPONSIVE
+========================= */
+@keyframes masukKiri {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes masukKanan {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes mengambang {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes kedip {
+    50% { opacity: 0; }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        padding: 18px 5%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 65px 6%;
+    }
+
+    .hero-visual {
+        align-self: center;
+        max-width: 100%;
+    }
+
+    .section {
+        padding: 70px 6%;
+    }
+
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   11. ANIMASI GLOW HIJAU TEKS
+========================= */
+
+.about h2 .green-text {
+    animation: textGlowPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes textGlowPulse {
+    0%, 100% {
+        /* Kondisi awal & akhir: Tampilan normal tanpa glow */
+        text-shadow: 0 0 0 rgba(163, 214, 92, 0);
+    }
+    50% {
+        /* Titik tengah: Efek glow hijau terang menyala */
+        text-shadow: 0 0 15px var(--hijau), 0 0 30px var(--hijau);
+    }
+}
+
+/* =========================
+   12. ANIMASI JUDUL PROYEK (KARYA ISENG-ISENG)
+========================= */
+
+.projects h2 {
+    display: inline-block;
+    animation: projectTitleBounce 3s ease-in-out infinite;
+    transform-origin: left center;
+}
+
+@keyframes projectTitleBounce {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        /* Saat setengah durasi, teks sedikit naik ke atas dan membesar halus */
+        transform: translateY(-6px) scale(1.02);
+        text-shadow: 3px 3px 0px rgba(25, 61, 43, 0.15);
+    }
+}
+
+/* =========================
+   13. TRANSISI HALUS SLIDESHOW FOTO PROFIL
+========================= */
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out; /* Durasi transisi halus */
+}
+
+.profile-img.fade-out {
+    opacity: 0; /* Efek memudar saat berganti foto */
+}
+
+/* =========================
+   14. TAMPILAN UNIK 2 FOTO BAGIAN KEGIATAN
+========================= */
+
+.activity-visual-unique {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Bingkai foto dengan gaya kartu border brutalist miring estetik */
+.activity-photo-frame {
+    width: 280px;
+    height: 330px;
+    background: var(--krem);
+    border: 3px solid var(--hitam);
+    padding: 12px 12px 35px 12px;
+    box-shadow: 10px 10px 0 var(--hijau-tua);
+    transform: rotate(3deg); /* Membuat posisi foto sedikit miring artistik */
+    transition: transform 0.3s ease;
+}
+
+.activity-photo-frame:hover {
+    transform: rotate(0deg) scale(1.02); /* Kembali lurus saat disentuh mouse */
+}
+
+.activity-img-unique {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid var(--hitam);
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; /* Transisi smooth saat berganti */
+}
+
+.activity-img-unique.fade-out {
+    opacity: 0;
+}
+
+/* Badge/Stiker kecil menempel di sudut foto */
+.activity-badge {
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+    background: var(--hijau);
+    color: var(--hitam);
+    font-weight: 800;
+    font-size: 12px;
+    padding: 6px 12px;
+    border: 2px solid var(--hitam);
+    box-shadow: 3px 3px 0 var(--hitam);
+    transform: rotate(-4deg);
+    z-index: 3;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 800px) {
+    .activity-visual-unique {
+        align-self: center;
+        margin-top: 40px;
+    }
+}
+
+/* =========================
+   19. KEGIATAN (FOTO DI KIRI, DESKRIPSI DI KANAN)
+========================= */
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.activity-visual-unique {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 620px;
+}
+
+/* Penyesuaian Tampilan HP */
+@media (max-width: 800px) {
+    .about-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .activity-visual-unique {
+        align-self: center;
+        margin-bottom: 25px;
+    }
+}
+
+/* =========================
+   20. ANIMASI BACKGROUND CONTACT (BULAT & GARIS BERGERAK)
+========================= */
+
+.contact {
+    position: relative;
+    overflow: hidden; /* Mencegah elemen keluar dari layar */
+    z-index: 1;
+}
+
+.contact-content {
+    position: relative;
+    z-index: 2; /* Agar teks & tombol tetap di atas animasi */
+}
+
+/* Container Dekorasi */
+.bg-animated-decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Agar tidak mengganggu klik mouse */
+    z-index: 1;
+}
+
+/* Style dasar bentuk bulat & garis */
+.shape {
+    position: absolute;
+    opacity: 0.25; /* Transparan halus agar tidak menutupi teks */
+}
+
+/* Lingkaran (Bulat-bulat) */
+.shape.circle {
+    border-radius: 50%;
+    border: 3px solid #193d2b; /* Warna hijau tua menyesuaikan tema */
+}
+
+.c1 {
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    right: 8%;
+    background: rgba(25, 61, 43, 0.1);
+    animation: floatCircle1 8s ease-in-out infinite alternate;
+}
+
+.c2 {
+    width: 60px;
+    height: 60px;
+    bottom: 15%;
+    left: 5%;
+    background: #193d2b;
+    animation: floatCircle2 6s ease-in-out infinite alternate;
+}
+
+.c3 {
+    width: 90px;
+    height: 90px;
+    bottom: 10%;
+    right: 25%;
+    border-style: dashed; /* Garis bulat putus-putus */
+    animation: floatCircle1 10s ease-in-out infinite alternate-reverse;
+}
+
+/* Garis-garis Dekorasi */
+.shape.line {
+    background: #193d2b;
+    height: 4px;
+    border-radius: 2px;
+}
+
+.l1 {
+    width: 140px;
+    top: 25%;
+    left: 12%;
+    transform: rotate(-25deg);
+    animation: floatLine1 7s ease-in-out infinite alternate;
+}
+
+.l2 {
+    width: 180px;
+    bottom: 20%;
+    right: 12%;
+    transform: rotate(15deg);
+    animation: floatLine2 9s ease-in-out infinite alternate;
+}
+
+/* Keyframes / Keyframe Gerakan Animasi */
+@keyframes floatCircle1 {
+    0% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+    }
+    100% {
+        transform: translateY(-25px) rotate(180deg) scale(1.1);
+    }
+}
+
+@keyframes floatCircle2 {
+    0% {
+        transform: translateX(0px) translateY(0px);
+    }
+    100% {
+        transform: translateX(20px) translateY(-20px);
+    }
+}
+
+@keyframes floatLine1 {
+    0% {
+        transform: rotate(-25deg) translateX(0);
+    }
+    100% {
+        transform: rotate(-20deg) translateX(30px);
+    }
+}
+
+@keyframes floatLine2 {
+    0% {
+        transform: rotate(15deg) translateY(0);
+    }
+}
+
+/* =========================
+   21. ANIMASI & BG BAGIAN TENTANG SAYA
+========================= */
+
+.about {
+    position: relative;
+    overflow: hidden;
+    padding: 60px 0;
+}
+
+.about-container {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Judul Hijau Terang dengan Shadow Tegas Agar Mudah Dibaca */
+.about-title-glow {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--hijau, #a3d65c);
+    text-shadow: 2px 2px 0px #193d2b, -1px -1px 0px #193d2b;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    animation: titlePulse 4s ease-in-out infinite alternate;
+}
+
+/* Kartu Utama Berwarna Hijau Tua Pekat (Kontras & Sangat Jelas) */
+.about-card {
+    background: #193d2b; /* Warna hijau tua pekat */
+    color: #f4f0e5;       /* Warna teks krem lembut */
+    padding: 40px;
+    border-radius: 16px;
+    border: 3px solid #000;
+    box-shadow: 8px 8px 0px #a3d65c; /* Shadow hijau terang */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 12px 12px 0px #a3d65c;
+}
+
+.about-card .about-description {
+    color: #e2dfd5;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* Dekorasi Animasi Latar Belakang (Melayang Halus) */
+.about-bg-decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.about-shape {
+    position: absolute;
+    opacity: 0.2;
+}
+
+.about-shape.circle {
+    border-radius: 50%;
+    border: 3px solid #193d2b;
+}
+
+.c-about-1 {
+    width: 140px;
+    height: 140px;
+    top: 10%;
+    left: -30px;
+    background: rgba(163, 214, 92, 0.3);
+    animation: floatAbout1 7s ease-in-out infinite alternate;
+}
+
+.c-about-2 {
+    width: 90px;
+    height: 90px;
+    bottom: 10%;
+    right: 20px;
+    border: 3px dashed #193d2b;
+    animation: floatAbout2 9s ease-in-out infinite alternate;
+}
+
+.about-shape.line {
+    height: 4px;
+    background: #193d2b;
+    border-radius: 2px;
+}
+
+.l-about-1 {
+    width: 160px;
+    top: 20%;
+    right: 5%;
+    transform: rotate(-15deg);
+    animation: floatAbout1 8s ease-in-out infinite alternate-reverse;
+}
+
+/* Animasi Movement Keyframes */
+@keyframes floatAbout1 {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+@keyframes floatAbout2 {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        transform: translateY(-25px) scale(1.1);
+    }
+}
+
+@keyframes titlePulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.02);
+    }
+}
+
+/* =========================
+   22. ANIMASI OPENING HERO (EFEK KINCIR & FADE-IN)
+========================= */
+
+/* Animasi Masuk untuk Teks dari Sebelah Kiri */
+.hero-content {
+    animation: heroSlideIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Animasi Masuk untuk Bingkai Foto dari Sebelah Kanan dengan Efek Putar Kincir */
+.hero-spin-card {
+    animation: kincirSpinIn 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    transform-origin: center center;
+}
+
+@keyframes heroSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes kincirSpinIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(-180deg); /* Mulai dari kecil dan berputar seperti kincir */
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.05) rotate(10deg); /* Sedikit memantul melewati ukuran normal */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg); /* Berhenti di posisi normal dengan mulus */
+    }
+}
+
+/* =========================
+   23. ANIMASI GANTI WARNA BACKGROUND & TEKS OTOMATIS DI HERO
+========================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    /* Melakukan transisi ganti warna background otomatis setiap 8 detik */
+    animation: heroBgShift 8s infinite alternate ease-in-out;
+    transition: color 0.5s ease, background-color 0.5s ease;
+}
+
+/* Animasi perubahan warna background dari hijau tua ke hijau muda */
+@keyframes heroBgShift {
+    0% {
+        background-color: #193d2b; /* Hijau Tua Pekat */
+        color: #f4f0e5;             /* Teks Krem Terang */
+    }
+    100% {
+        background-color: #a3d65c; /* Hijau Muda Terang */
+        color: #193d2b;             /* Teks Hijau Tua Kontras */
+    }
+}
+
+/* Penyesuaian Teks Utama 'TAMBUNAN' dan 'GREEN-TEXT' saat background berubah */
+.hero .green-text {
+    animation: textShift 8s infinite alternate ease-in-out;
+}
+
+@keyframes textShift {
+    0% {
+        color: #a3d65c; /* Saat BG gelap, teks nama berwarna hijau terang */
+        text-shadow: none;
+    }
+    100% {
+        color: #193d2b; /* Saat BG terang, teks nama berubah jadi hijau tua */
+        text-shadow: 2px 2px 0px #ffffff;
+    }
+}
+
+/* Subtitle & Bio ikut menyesuaikan kontras */
+.hero-subtitle, .hero-bio {
+    animation: subtextShift 8s infinite alternate ease-in-out;
+}
+
+@keyframes subtextShift {
+    0% {
+        color: #d1e7b6;
+    }
+    100% {
+        color: #132f21;
+    }
+}
+
+/* Bentuk Lingkaran di Belakang Foto ikut berganti warna agar tetap kelihatan */
+.hero .circle-one, .hero .circle-two {
+    animation: circleColorShift 8s infinite alternate ease-in-out;
+}
+
+@keyframes circleColorShift {
+    0% {
+        background-color: #a3d65c;
+    }
+    100% {
+        background-color: #193d2b;
+    }
+}
+
+/* Stiker Kecil STAY CREATIVE */
+.hero .sticker {
+    animation: stickerShift 8s infinite alternate ease-in-out;
+}
+
+@keyframes stickerShift {
+    0% {
+        background: #a3d65c;
+        color: #193d2b;
+    }
+    100% {
+        background: #193d2b;
+        color: #f4f0e5;
+    }
+}
+
+/* --- ELEMEN DEKORASI BACKGROUND BERGERAK (BULAT & GARIS) --- */
+.hero-bg-decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-shape {
+    position: absolute;
+    opacity: 0.25;
+}
+
+.hero-shape.circle {
+    border-radius: 50%;
+    border: 3px solid currentColor;
+}
+
+.c-hero-1 {
+    width: 150px;
+    height: 150px;
+    top: 8%;
+    left: 5%;
+    animation: floatHero1 7s ease-in-out infinite alternate;
+}
+
+.c-hero-2 {
+    width: 80px;
+    height: 80px;
+    bottom: 12%;
+    left: 45%;
+    border-style: dashed;
+    animation: floatHero2 9s ease-in-out infinite alternate;
+}
+
+.hero-shape.line {
+    height: 4px;
+    background: currentColor;
+    border-radius: 2px;
+}
+
+.l-hero-1 {
+    width: 140px;
+    top: 30%;
+    left: 40%;
+    transform: rotate(-20deg);
+    animation: floatHero1 6s ease-in-out infinite alternate-reverse;
+}
+
+.l-hero-2 {
+    width: 180px;
+    bottom: 18%;
+    right: 8%;
+    transform: rotate(15deg);
+    animation: floatHero2 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatHero1 {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-25px) rotate(15deg);
+    }
+}
+
+@keyframes floatHero2 {
+    0% {
+        transform: translateX(0px) translateY(0px);
+    }
+    100% {
+        transform: translateX(20px) translateY(-20px);
+    }
+}
+
+/* =========================
+   24. PENGATURAN UKURAN TEKS BERGANTI (DYNAMIC TEXT)
+========================= */
+
+.hero-dynamic-wrapper {
+    font-size: 1.8rem; /* Ukuran font dibuat jauh lebih besar dan tebal */
+    font-weight: 800;
+    margin: 15px 0 20px 0;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.hero-prefix {
+    opacity: 0.9;
+}
+
+/* ID yang memegang kata-kata yang berganti secara dinamis */
+#changing-text {
+    display: inline-block;
+    transition: opacity 0.3s ease-in-out;
+    /* Warna teks otomatis menyesuaikan perubahan background hero */
+}
+
+/* =========================
+   25. PENYESUAIAN TOMBOL BULAT & JARAK, SERTA HAPUS KEDIP "TENTANG SAYA"
+========================= */
+
+/* A. Tombol Menjadi Bulat & Diberi Jarak */
+.hero-buttons {
+    display: flex;
+    gap: 20px; /* Memberikan jarak antar tombol agar tidak mepet */
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.hero-buttons a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 50px; /* Membuat bentuk tombol menjadi bulat (pill shape) */
+    border: 3px solid currentColor;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.2s ease, 
+                background-color 0.2s ease, 
+                color 0.2s ease;
+    cursor: pointer;
+}
+
+/* Tombol Utama (Lihat Karya saya) */
+.btn-primary {
+    background-color: var(--hijau, #a3d65c);
+    color: #193d2b !important;
+    box-shadow: 4px 4px 0px currentColor;
+}
+
+/* Tombol Kedua (Tentang Aku) */
+.btn-secondary {
+    background-color: transparent;
+    box-shadow: 4px 4px 0px currentColor;
+}
+
+/* Efek saat kursor menyentuh tombol (Hover) */
+.hero-buttons a:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0px currentColor;
+}
+
+.hero-buttons a:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px currentColor;
+}
+
+
+/* B. Matikan Efek Kedip / Berdenyut pada Bagian "TENTANG SAYA" */
+.about-title-glow {
+    animation: none !important; /* Mematikan semua animasi kedip/pulse */
+    transform: none !important;
+}
+
+/* Opsional: Jika card tentang saya dulunya punya animasi kedip, pastikan stabil */
+.about-card {
+    animation: none !important;
+}
+
+/* =========================
+   26. STYLING KHUSUS SECTION ABOUT ME / KEGIATAN (POSTER VIBE)
+========================= */
+
+.about-activity-section {
+    position: relative;
+    background: #132f21; /* Warna hijau tua yang sangat pekat dan elegan untuk latar */
+    color: #f4f0e5;
+    padding: 90px 20px;
+    overflow: hidden;
+    border-top: 4px solid #a3d65c;
+    border-bottom: 4px solid #a3d65c;
+}
+
+/* Membungkus dan menggeser konten sedikit ke kanan agar seimbang dan rapi */
+.about-activity-wrapper {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding-left: 40px; /* Memberikan dorongan ke sebelah kanan */
+    position: relative;
+    z-index: 2;
+}
+
+/* Penyesuaian teks dalam container agar kontras dan mudah dibaca */
+.about-activity-wrapper .section-label {
+    color: #a3d65c;
+    margin-bottom: 15px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.about-activity-wrapper .about-description {
+    color: #d1e7b6;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.about-activity-wrapper .green-glow-title {
+    color: #f4f0e5;
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.about-activity-wrapper .green-text {
+    color: #a3d65c;
+}
+
+/* Tag kecil ala desainer visual */
+.activity-tags {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.activity-tags span {
+    background: rgba(163, 214, 92, 0.15);
+    color: #a3d65c;
+    border: 2px solid #a3d65c;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* Bingkai foto miring estetik dengan bayangan brutalist */
+.about-activity-wrapper .activity-photo-frame {
+    width: 290px;
+    height: 340px;
+    background: #f4f0e5;
+    border: 3px solid #a3d65c;
+    padding: 12px 12px 35px 12px;
+    box-shadow: 12px 12px 0px #a3d65c;
+    transform: rotate(-3deg);
+    transition: transform 0.3s ease;
+}
+
+.about-activity-wrapper .activity-photo-frame:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.about-activity-wrapper .activity-badge {
+    background: #a3d65c;
+    color: #132f21;
+    border: 2px solid #132f21;
+    box-shadow: 3px 3px 0 #f4f0e5;
+}
+
+/* --- DEKORASI LATAR BELAKANG BERGERAK (ABSTRAK) --- */
+.activity-bg-decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.act-shape {
+    position: absolute;
+    opacity: 0.15;
+}
+
+.act-shape.circle {
+    border-radius: 50%;
+    border: 3px solid #a3d65c;
+}
+
+.act-c1 {
+    width: 180px;
+    height: 180px;
+    top: -40px;
+    right: 5%;
+    background: rgba(163, 214, 92, 0.2);
+    animation: floatAct1 8s ease-in-out infinite alternate;
+}
+
+.act-c2 {
+    width: 100px;
+    height: 100px;
+    bottom: 20px;
+    left: 10%;
+    border-style: dashed;
+    animation: floatAct2 10s ease-in-out infinite alternate;
+}
+
+.act-shape.line {
+    height: 4px;
+    background: #a3d65c;
+    border-radius: 2px;
+}
+
+.act-l1 {
+    width: 220px;
+    bottom: 30%;
+    right: 15%;
+    transform: rotate(25deg);
+    animation: floatAct1 7s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatAct1 {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-25px) rotate(15deg);
+    }
+}
+
+@keyframes floatAct2 {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        transform: translateY(-20px) scale(1.1);
+    }
+}
+
+/* Responsif untuk HP */
+@media (max-width: 900px) {
+    .about-activity-wrapper {
+        padding-left: 0;
+    }
+}
+
+/* =========================
+   27. ANIMASI KEDAP-KEDIP (NEON BLINK) PADA JUDUL KEGIATAN
+========================= */
+
+.about-activity-wrapper .green-glow-title {
+    animation: neonBlinking 2.5s infinite steps(1) alternate;
+}
+
+@keyframes neonBlinking {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(163, 214, 92, 0.8), 
+                     0 0 20px rgba(163, 214, 92, 0.4);
+    }
+    20%, 24%, 55% {
+        opacity: 0.4; /* Efek meredup sejenak seperti lampu neon berkedip */
+        text-shadow: none;
+    }
+}
+
+/* =========================
+   28. STYLING SECTION KARYA (BACKGROUND HIJAU & PUTIH + CAHAYA BERJALAN)
+========================= */
+
+.projects-section-custom {
+    position: relative;
+    /* Latar belakang kombinasi gradasi warna hijau lembut dan putih */
+    background: linear-gradient(135deg, #f4f0e5 0%, #e2eedb 50%, #ffffff 100%);
+    color: #193d2b;
+    padding: 90px 20px;
+    border-top: 4px solid #193d2b;
+    border-bottom: 4px solid #193d2b;
+}
+
+.projects-wrapper {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.projects-main-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #193d2b;
+    margin-bottom: 40px;
+}
+
+/* --- KARTU DENGAN EFEK CAHAYA BERJALAN SAAT DI-KLIK/HOVER --- */
+.interactive-card {
+    position: relative;
+    background: #ffffff;
+    border: 3px solid #193d2b;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 8px 8px 0px #193d2b;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Garis Cahaya Berjalan (Light Trail / Glowing Border) */
+.interactive-card::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(90deg, transparent, #a3d65c, #ffffff, #193d2b, transparent);
+    background-size: 300% 300%;
+    z-index: -1;
+    border-radius: 16px;
+    opacity: 0; /* Tersembunyi saat awal */
+    transition: opacity 0.3s ease;
+}
+
+/* Saat kursor mendekat atau kartu ditekan (hover / active), cahaya berjalan aktif */
+.interactive-card:hover::before,
+.interactive-card:active::before {
+    opacity: 1;
+    animation: walkLightTrail 2s linear infinite; /* Animasi cahaya berputar/berjalan mengelilingi card */
+}
+
+.interactive-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 12px 12px 0px #193d2b;
+}
+
+.interactive-card:active {
+    transform: scale(0.98);
+}
+
+/* Keyframes untuk animasi cahaya berjalan */
+@keyframes walkLightTrail {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 300% 50%;
+    }
+}
+
+(163, 214, 92, 0.3);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.15);
+        opacity: 1;
+        box-shadow: 0 0 40px rgba(163, 214, 92, 0.8), 0 0 60px rgba(255, 255, 255, 0.6);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.6;
+        box-shadow: 0 0 20px rgba(163, 214, 92, 0.4);
+    }
+
+
+    /* =========================
+   29. ANIMASI TEKS KEREN & NEON GLOW KHUSUS "ISENG-ISENG"
+========================= */
+
+.projects-main-title {
+    font-size: 3.2rem !important;
+    font-weight: 900 !important;
+    color: #193d2b !important;
+    margin-bottom: 45px !important;
+    letter-spacing: -1px;
+}
+
+/* Efek Animasi Gradasi Warna & Neon Glow Keren pada Kata "Iseng-iseng." */
+.projects-main-title .text-cool-animation {
+    display: inline-block;
+    background: linear-gradient(135deg, #a3d65c 0%, #ffffff 50%, #193d2b 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: coolTextAnim 4s linear infinite, textFloatAnim 3s ease-in-out infinite alternate;
+}
+
+/* Animasi pergeseran gradasi warna yang dinamis */
+@keyframes coolTextAnim {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Efek sedikit melayang/berdenyut agar tulisannya hidup */
+@keyframes textFloatAnim {
+    0% {
+        transform: translateY(0);
+        filter: drop-shadow(0 0 8px rgba(163, 214, 92, 0.6));
+    }
+    100% {
+        transform: translateY(-4px);
+        filter: drop-shadow(0 0 16px rgba(163, 214, 92, 0.9));
+    }
+}
+
+/* =========================
+   40. LATAR BELAKANG HIJAU LEMBUT + KARTU GELAP INTERAKTIF
+========================= */
+
+/* A. Latar Belakang Hijau-Krem Lembut Segar */
+.projects-section-custom {
+    position: relative;
+    background: linear-gradient(135deg, #e3ebd9 0%, #d8e5cc 50%, #eaf1e4 100%) !important;
+    color: #193d2b !important;
+    padding: 90px 20px;
+    border-top: 4px solid #193d2b;
+    border-bottom: 4px solid #193d2b;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Dekorasi Geometris Abstrak Melayang di Atas Latar Belakang Hijau */
+.projects-section-custom::before {
+    content: '';
+    position: absolute;
+    top: 5%;
+    left: -5%;
+    width: 280px;
+    height: 180px;
+    background: rgba(163, 214, 92, 0.25);
+    border: 2px dashed #193d2b;
+    transform: skewX(-15deg) rotate(10deg);
+    animation: floatGeometry1 9s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.projects-section-custom::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    right: -5%;
+    width: 320px;
+    height: 220px;
+    background: rgba(25, 61, 43, 0.08);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    transform: rotate(-12deg);
+    animation: floatGeometry2 11s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* B. Penyesuaian Teks Label & Judul di Atas Latar Belakang Terang */
+.projects-section-custom .section-label {
+    color: #193d2b !important;
+    font-weight: 800;
+}
+
+.projects-main-title {
+    font-size: 3.2rem !important;
+    font-weight: 900 !important;
+    color: #193d2b !important;
+    margin-bottom: 45px !important;
+    position: relative;
+    z-index: 2;
+}
+
+/* Teks "Iseng-iseng." Tetap Animasi & Glow Keren */
+.projects-main-title .text-cool-animation,
+.projects-main-title .green-text {
+    display: inline-block;
+    color: #4a8027 !important;
+    text-shadow: 0 0 12px rgba(163, 214, 92, 0.8);
+    animation: textFloatAnim 3s ease-in-out infinite alternate !important;
+}
+
+/* C. Kartu Proyek Gelap dengan Bayangan Aksen Hijau (Sama Seperti Sebelumnya) */
+.projects-section-custom .project-card,
+.interactive-card {
+    position: relative;
+    z-index: 2;
+    background: #11161a !important; /* Kartu tetap berwarna gelap kontras */
+    border: 3px solid #a3d65c !important;
+    border-radius: 14px !important;
+    padding: 20px !important;
+    box-shadow: 8px 8px 0px #193d2b !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.projects-section-custom .project-card h3 {
+    color: #ffffff !important;
+}
+
+.projects-section-custom .project-card p {
+    color: #c5cbd3 !important;
+}
+
+.projects-section-custom .project-image {
+    background: #1a232e !important;
+    border: 2px solid #a3d65c !important;
+}
+
+/* Interaksi Cahaya Bergeser (Light Sweep) pada Kartu Gelap */
+.interactive-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -150%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        60deg, 
+        transparent 30%, 
+        rgba(255, 255, 255, 0.6) 50%, 
+        rgba(163, 214, 92, 0.4) 60%, 
+        transparent 70%
+    );
+    transform: rotate(25deg);
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.interactive-card:hover::after,
+.interactive-card:active::after {
+    opacity: 1;
+    animation: lightSweep 1.2s ease-in-out infinite;
+}
+
+.interactive-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 12px 12px 0px #193d2b !important;
+}
+
+@keyframes lightSweep {
+    0% { left: -150%; }
+    100% { left: 150%; }
+}
+
+@keyframes textFloatAnim {
+    0% {
+        transform: translateY(0);
+        filter: drop-shadow(0 0 6px rgba(163, 214, 92, 0.6));
+    }
+    100% {
+        transform: translateY(-4px);
+        filter: drop-shadow(0 0 15px rgba(163, 214, 92, 0.9));
+    }
+}
+
+/* =========================
+   42. ANIMASI TEKS "ISENG-ISENG" SIMPEL, TAJAM & UNIK (TANPA GLOW BURAM)
+========================= */
+
+/* Menghilangkan pendaran cahaya buram & membuat teks tajam */
+.projects-main-title .text-cool-animation,
+.projects-main-title .green-text {
+    display: inline-block;
+    color: #3b681e !important;
+    text-shadow: none !important; /* Hapus efek blur/glow berlebihan */
+    filter: none !important;
+    font-weight: 900;
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease;
+    cursor: default;
+    
+    /* Gradasi warna bersih mengalir halus */
+    background: linear-gradient(120deg, #2d5a1e, #559328, #2d5a1e);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: cleanColorWave 4s linear infinite;
+}
+
+/* Animasi alur warna halus di dalam teks */
+@keyframes cleanColorWave {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+/* Efek interaktif unik: Saat kursor diarahkan, teks melompat sedikit dengan mulus */
+.projects-main-title .text-cool-animation:hover {
+    transform: translateY(-5px) scale(1.03);
+}
+
+/* =========================
+   43. TIPOGRAFI FONT UNIK & INTERAKSI TEKS "ISENG-ISENG"
+========================= */
+
+/* Penerapan font unik khusus kata "Iseng-iseng." */
+.projects-main-title .text-cool-animation,
+.projects-main-title .green-text {
+    display: inline-block;
+    font-family: 'Unbounded', 'Syne', sans-serif !important; /* Font bergaya modern brutalist */
+    font-weight: 900 !important;
+    letter-spacing: -1px;
+    
+    /* Gradasi warna hijau artistik & tajam */
+    background: linear-gradient(120deg, #2d5a1e 0%, #559328 50%, #2d5a1e 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Efek garis tepi (text-stroke) halus ala poster desain */
+    -webkit-text-stroke: 1px rgba(25, 61, 43, 0.2);
+    
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    animation: cleanColorWave 5s linear infinite;
+}
+
+/* Animasi perubahan warna bergerak lembut */
+@keyframes cleanColorWave {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+/* Efek interaktif unik saat kursor mendekat */
+.projects-main-title .text-cool-animation:hover {
+    transform: translateY(-4px) scale(1.04) rotate(-1deg); /* Sedikit miring & membesar ala gaya poster */
+}
+
+/* =========================
+   44. EFEK CAHAYA LAMPU REDUP-REDUP PADA NAMA
+========================= */
+
+/* Selector untuk teks nama kamu, sesuaikan jika perlu */
+.hero-content h1 {
+    display: inline-block;
+    color: #e3ebd9; /* Warna teks dasar yang terang dan bersih */
+    font-weight: 900;
+    
+    /* MENAMBAHKAN ANIMASI CAHAYA REDUP-REDUP (FLICKER & GLOW) */
+    animation: textFlickerAndGlow 3s ease-in-out infinite alternate !important;
+    
+    /* Mengaktifkan pendaran cahaya neon */
+    text-shadow: 0 0 10px rgba(163, 214, 92, 0.6),
+                 0 0 20px rgba(163, 214, 92, 0.4),
+                 0 0 30px rgba(163, 214, 92, 0.2);
+    
+    position: relative;
+    cursor: default;
+}
+
+/* KEYFRAMES UNTUK ANIMASI REDUP-REDUP CAHAYA (FLICKER EFFECT) */
+@keyframes textFlickerAndGlow {
+    0% {
+        opacity: 1; /* Cahaya terang penuh */
+        text-shadow: 0 0 10px rgba(163, 214, 92, 0.7), 0 0 20px rgba(163, 214, 92, 0.5), 0 0 30px rgba(163, 214, 92, 0.3);
+    }
+    10% {
+        opacity: 0.85; /* Sedikit meredup secara tiba-tiba (flicker) */
+        text-shadow: 0 0 8px rgba(163, 214, 92, 0.5);
+    }
+    11% {
+        opacity: 1; /* Terang kembali dalam sekejap */
+        text-shadow: 0 0 10px rgba(163, 214, 92, 0.7);
+    }
+    12% {
+        opacity: 0.9; /* Sedikit redup lagi */
+        text-shadow: 0 0 8px rgba(163, 214, 92, 0.5);
+    }
+    13% {
+        opacity: 1; /* Terang kembali */
+        text-shadow: 0 0 10px rgba(163, 214, 92, 0.7);
+    }
+    40% {
+        opacity: 1; /* Cahaya stabil terang */
+        text-shadow: 0 0 12px rgba(163, 214, 92, 0.8), 0 0 25px rgba(163, 214, 92, 0.6);
+    }
+    50% {
+        opacity: 0.95; /* Sedikit meredup lembut */
+        text-shadow: 0 0 10px rgba(163, 214, 92, 0.7);
+    }
+    60% {
+        opacity: 1; /* Kembali terang stabil */
+        text-shadow: 0 0 12px rgba(163, 214, 92, 0.8);
+    }
+    70% {
+        opacity: 0.8; /* Meredup lebih dalam tiba-tiba */
+        text-shadow: 0 0 6px rgba(163, 214, 92, 0.4);
+    }
+    72% {
+        opacity: 1; /* Terang penuh tiba-tiba */
+        text-shadow: 0 0 10px rgba(163, 214, 92, 0.7);
+    }
+    100% {
+        opacity: 1; /* Akhir animasi dalam keadaan terang penuh */
+        text-shadow: 0 0 10px rgba(163, 214, 92, 0.7), 0 0 20px rgba(163, 214, 92, 0.5), 0 0 30px rgba(163, 214, 92, 0.3);
+    }
+}
+
+/* =========================
+   45. ANIMASI & EFEK KEREN PADA MENU NAVIGASI (NAVBAR)
+========================= */
+
+/* A. Menata Pembungkus Navigasi */
+nav ul, .nav-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    list-style: none;
+}
+
+/* B. Styling Tombol Navigasi Berbentuk Kapsul / Pill */
+nav a, .nav-links a {
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    color: #193d2b !important;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border-radius: 50px; /* Bentuk kapsul/pill */
+    border: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* C. Efek Latar Belakang & Cahaya Menyapu saat Hover */
+nav a::before, .nav-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #193d2b; /* Warna latar saat hover */
+    border-radius: 50px;
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+/* D. Interaksi Kursor Mendekat (Hover) */
+nav a:hover, .nav-links a:hover {
+    color: #a3d65c !important; /* Warna teks berganti ke hijau terang */
+    transform: translateY(-3px); /* Melayang sedikit ke atas */
+    box-shadow: 0 6px 15px rgba(25, 61, 43, 0.2), 0 0 10px rgba(163, 214, 92, 0.5); /* Pendaran cahaya glow */
+    border-color: #a3d65c;
+}
+
+/* Menjalankan latar belakang menyapu saat hover */
+nav a:hover::before, .nav-links a:hover::before {
+    left: 0;
+}
+
+/* E. Efek Membal saat Diklik (Active / Clicked) */
+nav a:active, .nav-links a:active {
+    transform: translateY(1px) scale(0.95);
+    box-shadow: 0 2px 5px rgba(25, 61, 43, 0.3);
+}
+
+/* F. Tanda Menu Aktif (Jika Sedang di Halaman/Section Tersebut) */
+nav a.active, .nav-links a.active {
+    background: #193d2b;
+    color: #a3d65c !important;
+    border-color: #a3d65c;
+    box-shadow: 0 0 8px rgba(163, 214, 92, 0.4);
+}
+
+/* =========================
+   46. ANIMASI LOGO @AHOK.PY. UNIK & BERJALAN
+========================= */
+
+/* A. Styling Utama Logo Branding */
+header .logo,
+.logo-text,
+a.logo {
+    display: inline-block;
+    font-family: 'Unbounded', 'Syne', monospace, sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 1.6rem !important;
+    letter-spacing: -0.5px;
+    text-decoration: none !important;
+    position: relative;
+    cursor: pointer;
+    
+    /* Gradasi warna bergerak dinamis */
+    background: linear-gradient(120deg, #193d2b 0%, #4a8027 40%, #a3d65c 70%, #193d2b 100%);
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Animasi gelombang warna bergerak terus-menerus */
+    animation: logoColorFlow 4s linear infinite;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* B. Animasi Aliran Warna Bergerak pada Logo */
+@keyframes logoColorFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 250% 50%;
+    }
+}
+
+/* C. Efek Garis Bawah Neon Berjalan (Blinking Cursor Cursor / Underline Glow) */
+header .logo::after,
+.logo-text::after,
+a.logo::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #193d2b, #a3d65c, #193d2b);
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(163, 214, 92, 0.8);
+    transform: scaleX(0.3);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: logoLinePulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes logoLinePulse {
+    0% {
+        opacity: 0.5;
+        transform: scaleX(0.3);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+/* D. Interaksi Unik saat Kursor Diarahkan (Hover) */
+header .logo:hover,
+.logo-text:hover,
+a.logo:hover {
+    transform: translateY(-3px) scale(1.05) rotate(-1.5deg);
+    filter: drop-shadow(0 0 10px rgba(163, 214, 92, 0.6));
+}
+
+header .logo:hover::after,
+.logo-text:hover::after,
+a.logo:hover::after {
+    transform: scaleX(1);
+    background: #a3d65c;
+    box-shadow: 0 0 12px #a3d65c;
+}
+
+/* =========================
+   48. BINGKAI FOTO PROFIL CAIR, INTERAKTIF & FUTURISTIK
+========================= */
+
+/* A. Pembungkus Utama Area Foto */
+.hero-image, .profile-img-container, .hero-img-box {
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+    cursor: pointer;
+}
+
+/* B. Mengubah Foto Menjadi Bentuk Cair Mengambang (Liquid Blob) */
+.hero-image img, 
+.profile-img-container img, 
+.hero-img-box img {
+    width: 320px !important;
+    height: 320px !important;
+    object-fit: cover !important;
+    
+    /* Bentuk border-radius organik tidak beraturan yang berdenyut/berubah bentuk */
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40% !important;
+    
+    /* Bingkai neon hijau terang dan bayangan dalam */
+    border: 4px solid #a3d65c !important;
+    box-shadow: 0 0 25px rgba(163, 214, 92, 0.6), 
+                inset 0 0 20px rgba(25, 61, 43, 0.8) !important;
+                
+    /* Animasi perubahan bentuk cairan & melayang */
+    animation: liquidMorph 8s ease-in-out infinite alternate, 
+               floatPhoto 4s ease-in-out infinite alternate !important;
+               
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    position: relative;
+    z-index: 2;
+}
+
+/* C. Cincin Cahaya Neon Mengorbit di Luar Foto */
+.hero-image::before, 
+.profile-img-container::before, 
+.hero-img-box::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 2px dashed rgba(163, 214, 92, 0.7);
+    border-radius: 50%;
+    animation: spinOrbit 12s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* D. Efek Hologram Garis Cahaya di Belakang Foto */
+.hero-image::after, 
+.profile-img-container::after, 
+.hero-img-box::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 360px;
+    height: 360px;
+    background: radial-gradient(circle, rgba(163, 214, 92, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    animation: pulseHologram 3s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+/* E. Interaksi Keren saat Kursor Didekatkan (Hover) */
+.hero-image:hover img, 
+.profile-img-container:hover img, 
+.hero-img-box:hover img {
+    transform: scale(1.08) rotate(3deg) !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 0 40px rgba(163, 214, 92, 0.9), 
+                0 0 80px rgba(59, 104, 30, 0.7),
+                inset 0 0 30px rgba(163, 214, 92, 0.9) !important;
+    filter: contrast(1.1) brightness(1.05);
+}
+
+/* F. Keyframes Animasi Cair & Dinamis */
+@keyframes liquidMorph {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    33% {
+        border-radius: 40% 60% 70% 30% / 50% 70% 30% 50%;
+    }
+    66% {
+        border-radius: 50% 50% 40% 60% / 70% 40% 60% 30%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
+
+@keyframes floatPhoto {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-12px) rotate(-2deg);
+    }
+}
+
+@keyframes spinOrbit {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.05);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes pulseHologram {
+    0% {
+        opacity: 0.4;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+    100% {
+        opacity: 0.9;
+        transform: translate(-50%, -50%) scale(1.15);
+    }
+}
+

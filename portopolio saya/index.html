@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Fernandes Tambunan</title>
+
+    <!-- Menghubungkan file CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- NAVIGASI -->
+    <header class="navbar">
+        <a href="#home" class="logo">@AHOK.PY<span>.</span></a>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- SECTION HERO / PEMBUKA -->
+    <section class="hero section" id="home">
+        <!-- Dekorasi Animasi Latar Belakang Hero -->
+        <div class="hero-bg-decor">
+            <span class="hero-shape circle c-hero-1"></span>
+            <span class="hero-shape circle c-hero-2"></span>
+            <span class="hero-shape line l-hero-1"></span>
+            <span class="hero-shape line l-hero-2"></span>
+        </div>
+
+        <div class="hero-content">
+            <p class="hero-subtitle">HALOO... PERKENALKAN NAMA SAYA</p>
+            <h1>
+                FERNANDES <br>
+                <span class="green-text">TAMBUNAN</span>
+            </h1>
+            <p class="hero-description">
+                Saya adalah <span class="highlight" id="changing-text">Orang yang suka tampilan visual</span> |
+            </p>
+            <p class="hero-bio">
+                Saya adalah mahasiswa yang tertarik pada desain grafis, UI/UX, 
+                dan eksplorasi ide kreatif. Aku suka membuat desain yang unik, 
+                menarik, dan mudah digunakan.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">Lihat Karya saya ↗</a>
+                <a href="#about" class="btn-secondary">Tentang Saya</a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="circle circle-one"></div>
+            <div class="circle circle-two"></div>
+
+            <!-- Bingkai Foto dengan Animasi Masuk Kincir/Spin -->
+            <div class="profile-img-container">
+                <img src="pribadi.jpeg" alt="Foto Profil" id="profile-img" class="profile-img">
+            </div>
+
+            <div class="sticker">STAY CREATIVE ☻</div>
+        </div>
+    </section>
+    
+    <!-- SECTION TENTANG SAYA -->
+<section class="about section" id="about">
+    <!-- Animasi Dekorasi Latar Belakang -->
+    <div class="about-bg-decor">
+        <span class="about-shape circle c-about-1"></span>
+        <span class="about-shape circle c-about-2"></span>
+        <span class="about-shape line l-about-1"></span>
+    </div>
+
+    <div class="about-container">
+        <p class="section-label">01. PERKENALAN</p>
+        
+        <!-- Kartu Utama Agar Teks Sangat Jelas Dibaca -->
+        <div class="about-card">
+            <h2 class="about-title-glow">TENTANG SAYA.</h2>
+
+            <p class="about-description">
+                Saya adalah mahasiswa jurusan Teknik Informatika dari kampus Universitas Indraprasta 
+                yang suka akan sebuah tampilan baik itu tampilan web, aplikasi, foto atau gambar. 
+                Karna saya percaya desain atau tampilan memberikan kesan yang tidak bisa diucapkan 
+                dan ketika melihatnya saya berasa seperti memiliki warna yang indah.
+            </p>
+
+            <p class="about-description" style="margin-top: 15px;">
+                Desain yang baik bukan hanya terlihat menarik, tetapi juga memiliki tujuan dan 
+                memberikan pengalaman yang menyenangkan bagi penggunanya. Melalui setiap 
+                proyek, saya ingin terus belajar, bereksperimen, dan mengembangkan kreativitas.
+            </p>
+        </div>
+    </div>
+</section>
+
+   <!-- SECTION KEGIATAN YANG PERNAH DIIKUTI (POSTER STYLE) -->
+    <section class="about-activity-section" id="about-activity">
+        <!-- Dekorasi Latar Belakang Abstrak & Animasi -->
+        <div class="activity-bg-decor">
+            <span class="act-shape circle act-c1"></span>
+            <span class="act-shape circle act-c2"></span>
+            <span class="act-shape line act-l1"></span>
+        </div>
+
+        <div class="about-activity-wrapper">
+            <p class="section-label">02 / ABOUT ME & EXPERIENCE</p>
+            
+            <div class="about-container">
+                <!-- Tampilan Foto Unik di Sebelah Kiri dengan Gaya Poster -->
+                <div class="activity-visual-unique">
+                    <div class="activity-photo-frame">
+                        <img src="foto saya2.jpeg" alt="Foto Kegiatan" id="activity-img-2" class="activity-img-unique">
+                    </div>
+                    <div class="activity-badge">PMK UNINDRA ☻</div>
+                </div>
+
+                <!-- Teks Deskripsi di Sebelah Kanan (Lebih Rapi & Elegan) -->
+                <div class="about-text-column">
+                    <h2 class="green-glow-title">
+                        KEGIATAN YANG PERNAH <span class="green-text">DI IKUTI.</span>
+                    </h2>
+
+                    <p class="about-description">
+                        Saya pernah mengikuti kegiatan atau organisasi PMK (Persatuan Mahasiswa Kristen)
+                        dan dipercaya untuk memegang desain ibadah, desain ucapan hari besar, dan kebutuhan visual lainnya.
+                    </p>
+
+                    <p class="about-description" style="margin-top: 15px;">
+                        Pernah menjadi koordinator dalam acara dikampus mengenai desain,
+                        menjadi anggota dalam perlengkapan, konsumsi dll.
+                    </p>
+
+                    <div class="activity-tags">
+                        <span>#GraphicDesign</span>
+                        <span>#VisualArts</span>
+                        <span>#UIUX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+   <!-- PROYEK / KARYA -->
+    <section class="projects-section-custom" id="projects">
+        <div class="projects-wrapper">
+            <p class="section-label">03 / MY WORKS</p>
+
+            <!-- Judul Bersih dengan Efek Animasi Teks Keren -->
+            <h2 class="projects-main-title">
+                <span class="green-text text-cool-animation">Projek.</span>
+            </h2>
+
+            <div class="project-container">
+                <!-- Proyek 1 -->
+                <article class="project-card interactive-card">
+                    <div class="project-image">
+                        <span>01</span>
+                        <img src="desain3.jpeg" alt="Proyek 1" class="project-img">
+                    </div>
+                    <h3>Desain Produk</h3>
+                    <p>Untuk UMKM dan sejenisnya</p>
+                </article>
+
+                <!-- Proyek 2 -->
+                <article class="project-card interactive-card">
+                    <div class="project-image">
+                        <span>02</span>
+                        <img src="desain 1.jpeg" alt="Proyek 2" class="project-img">
+                    </div>
+                    <h3>Desain Poster</h3>
+                    <p>Eksperimen warna, bentuk, dan tipografi.</p>
+                </article>
+
+                <!-- Proyek 3 -->
+                <article class="project-card interactive-card">
+                    <div class="project-image">
+                        <span>03</span>
+                        <img src="desain 2.jpeg" alt="Proyek 3" class="project-img">
+                    </div>
+                    <h3>Proyek Desain</h3>
+                    <p>Ide personal yang dikembangkan menjadi karya.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION CONTACT / GET IN TOUCH -->
+<section class="contact section" id="contact">
+    <!-- Elemen Dekorasi Background Bergerak -->
+    <div class="bg-animated-decor">
+        <span class="shape circle c1"></span>
+        <span class="shape circle c2"></span>
+        <span class="shape line l1"></span>
+        <span class="shape line l2"></span>
+        <span class="shape circle c3"></span>
+    </div>
+
+    <!-- Konten Utama (Pastikan di dalam wrapper ini) -->
+    <div class="contact-content">
+        <p class="section-label">03 / GET IN TOUCH</p>
+        <h2>AYO BUAT SESUATU YANG <span>KEREN!</span></h2>
+        <p>Punya ide atau ingin berkolaborasi? Jangan ragu untuk menghubungi Saya.</p>
+        <a href="#contact" class="btn-hubungi">Hubungi Saya ↗</a>
+    </div>
+</section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© <span id="year"></span> Fernandes Tambunan. Dibuat dengan kreativitas.</p>
+    </footer>
+
+</body>
+</html>
